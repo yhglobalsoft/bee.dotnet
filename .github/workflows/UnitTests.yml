@@ -17,8 +17,6 @@ jobs:
       - name: build
         run: dotnet build bee.dotnet.sln
 
-      - name: Bee.Abp
-        run: dotnet test test/Bee.Abp.Tests/Bee.Abp.Tests.csproj
+      - name: Bee.Tests
+        run: dotnet test bee.dotnet.sln
 
-      - name: Bee.Abp
-        run: dotnet test test/Bee.Abp.Localozation.Tests/Bee.Abp.Localozation.Tests.csproj
