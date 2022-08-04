@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <NoWarn>$(NoWarn);CS1591;NU1603</NoWarn>
+        <AssemblyName>Bee.Apm</AssemblyName>
+        <RootNamespace />
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Elastic.Apm.AspNetCore" />
+        <PackageReference Include="Elastic.Apm.Elasticsearch" />
+        <PackageReference Include="Elastic.Apm.EntityFrameworkCore" />
+        <PackageReference Include="Elastic.Apm.SqlClient" />
+        <PackageReference Include="Elastic.Apm.SerilogEnricher" />
+        <PackageReference Include="Elastic.Apm.StackExchange.Redis" />
+    </ItemGroup>
+</Project>
