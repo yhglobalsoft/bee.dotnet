@@ -1,0 +1,24 @@
+name: UnitTests
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Dotnet 6.x
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "6.0"
+          include-prerelease: True
+      - name: build
+        run: dotnet build bee.dotnet.sln
+
+      - name: Bee.Abp
+        run: dotnet test test/Bee.Abp.Tests/Bee.Abp.Tests.csproj
+
+      - name: Bee.Abp
+        run: dotnet test test/Bee.Abp.Localozation.Tests/Bee.Abp.Localozation.Tests.csproj
