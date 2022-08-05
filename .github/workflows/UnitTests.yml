@@ -15,8 +15,8 @@ jobs:
           dotnet-version: "6.0"
           include-prerelease: True
       - name: build
-        run: dotnet build bee.dotnet.sln
+        run: dotnet build Bee.Dotnet.sln
 
       - name: Bee.Tests
-        run: dotnet test bee.dotnet.sln
+        run: dotnet test Bee.Dotnet.sln
 
