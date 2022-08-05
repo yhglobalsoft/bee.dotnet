@@ -52,7 +52,7 @@ namespace System.Text
         public void SubStringTest()
         {
             var sb = new StringBuilder("asdfgef");
-            Should.Throw<BusinessException>(() =>
+            Should.Throw<ArgumentOutOfRangeException>(() =>
             {
                 sb.SubString(0, 8);
             });

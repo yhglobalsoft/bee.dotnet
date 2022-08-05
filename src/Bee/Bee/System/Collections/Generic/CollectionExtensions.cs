@@ -1,6 +1,4 @@
-﻿using Bee;
-
-namespace System.Collections.Generic;
+﻿namespace System.Collections.Generic;
 
 /// <summary>
 /// 集合扩展方法
@@ -12,7 +10,7 @@ public static class CollectionExtensions
     /// </summary>
     public static void AddIf<T>(this ICollection<T> collection, T value, bool flag)
     {
-        Guard.NotNull(collection, nameof(collection));
+        if (collection is null) throw new ArgumentNullException();
         if (flag)
         {
             collection.Add(value);
@@ -24,7 +22,7 @@ public static class CollectionExtensions
     /// </summary>
     public static void AddIf<T>(this ICollection<T> collection, T value, Func<bool> func)
     {
-        Guard.NotNull(collection, nameof(collection));
+        if (collection is null) throw new ArgumentNullException();
         if (func())
         {
             collection.Add(value);
@@ -36,7 +34,7 @@ public static class CollectionExtensions
     /// </summary>
     public static void AddIfNotExist<T>(this ICollection<T> collection, T value, Func<T, bool> existFunc = null)
     {
-        Guard.NotNull(collection, nameof(collection));
+        if (collection is null) throw new ArgumentNullException();
         var exists = existFunc == null ? collection!.Contains(value) : collection!.Any(existFunc);
         if (!exists)
         {
@@ -49,7 +47,7 @@ public static class CollectionExtensions
     /// </summary>
     public static void AddIfNotNull<T>(this ICollection<T> collection, T value) where T : class
     {
-        Guard.NotNull(collection, nameof(collection));
+        if (collection is null) throw new ArgumentNullException();
         if (value != null)
         {
             collection!.Add(value);
@@ -61,7 +59,7 @@ public static class CollectionExtensions
     /// </summary>
     public static T GetOrAdd<T>(this ICollection<T> collection, Func<T, bool> selector, Func<T> factory)
     {
-        Guard.NotNull(collection, nameof(collection));
+        if (collection is null) throw new ArgumentNullException();
         T item = collection.FirstOrDefault(selector);
         if (item == null)
         {
@@ -72,23 +70,6 @@ public static class CollectionExtensions
         return item;
     }
 
-    /// <summary>
-    /// 交换两项的位置
-    /// </summary>
-    public static void Swap<T>(this List<T> list, int index1, int index2)
-    {
-        Guard.Between(index1, nameof(index1), 0, list.Count, true);
-        Guard.Between(index2, nameof(index2), 0, list.Count, true);
-
-        if (index1 == index2)
-        {
-            return;
-        }
-
-        T tmp = list[index1];
-        list[index1] = list[index2];
-        list[index2] = tmp;
-    }
 
     /// <summary>
     /// 判断数字集合是否是连续的
@@ -101,7 +82,7 @@ public static class CollectionExtensions
             return false;
         }
 
-        numList.Sort((x, y) => -x.CompareTo(y));//降序
+        numList.Sort((x, y) => -x.CompareTo(y)); //降序
         bool result = false;
         var totalCount = numList.Count();
         for (int i = 0; i < totalCount - 1; i++)
@@ -113,6 +94,7 @@ public static class CollectionExtensions
                 break;
             }
         }
+
         return result;
     }
 }

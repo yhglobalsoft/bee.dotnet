@@ -1,8 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
-        <Nullable>enable</Nullable>
+        <TargetFramework>net6.0</TargetFramework>
+        <NoWarn>$(NoWarn);CS1591;NU1603</NoWarn>
+        <AssemblyName>Bee.Abp.Apm</AssemblyName>
+        <RootNamespace />
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\Bee\Bee.Apm\Bee.Apm.csproj" />
+      <ProjectReference Include="..\Bee.Abp\Bee.Abp.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.AspNetCore" />
+        <PackageReference Include="Volo.Abp.Caching.StackExchangeRedis" />
+    </ItemGroup>
 </Project>

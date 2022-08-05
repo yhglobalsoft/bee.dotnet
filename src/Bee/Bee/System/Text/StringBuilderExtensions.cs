@@ -1,7 +1,4 @@
-﻿using Volo.Abp;
-using Bee;
-
-namespace System.Text;
+﻿namespace System.Text;
 
 /// <summary>
 /// StringBuilder 扩展方法类
@@ -15,7 +12,7 @@ public static class StringBuilderExtensions
     /// <returns>返回修改后的StringBuilder，主要用于链式操作</returns>
     public static StringBuilder TrimStart(this StringBuilder stringBuilder)
     {
-        Guard.NotNull(stringBuilder, nameof(stringBuilder));
+        if (stringBuilder is null) throw new ArgumentNullException();
 
         return stringBuilder.TrimStart(' ');
     }
@@ -28,7 +25,7 @@ public static class StringBuilderExtensions
     /// <returns></returns>
     public static StringBuilder TrimStart(this StringBuilder stringBuilder, char c)
     {
-        Guard.NotNull(stringBuilder, nameof(stringBuilder));
+        if (stringBuilder is null) throw new ArgumentNullException();
 
         if (stringBuilder.Length == 0)
         {
@@ -50,9 +47,8 @@ public static class StringBuilderExtensions
     /// <returns></returns>
     public static StringBuilder TrimStart(this StringBuilder stringBuilder, char[] chars)
     {
-        Guard.NotNull(stringBuilder, nameof(stringBuilder));
-        Guard.NotNull(chars, nameof(chars));
-
+        if (stringBuilder is null) throw new ArgumentNullException();
+  
         return stringBuilder.TrimStart(new string(chars));
     }
 
@@ -64,7 +60,7 @@ public static class StringBuilderExtensions
     /// <returns></returns>
     public static StringBuilder TrimStart(this StringBuilder stringBuilder, string str)
     {
-        Guard.NotNull(stringBuilder, nameof(stringBuilder));
+        if (stringBuilder is null) throw new ArgumentNullException();
 
         if (string.IsNullOrEmpty(str)
             || stringBuilder.Length == 0
@@ -103,7 +99,7 @@ public static class StringBuilderExtensions
     /// <returns></returns>
     public static StringBuilder TrimEnd(this StringBuilder stringBuilder, char c)
     {
-        Guard.NotNull(stringBuilder, nameof(stringBuilder));
+        if (stringBuilder is null) throw new ArgumentNullException();
         if (stringBuilder.Length == 0)
         {
             return stringBuilder;
@@ -125,8 +121,7 @@ public static class StringBuilderExtensions
     /// <returns></returns>
     public static StringBuilder TrimEnd(this StringBuilder stringBuilder, char[] chars)
     {
-        Guard.NotNull(stringBuilder, nameof(stringBuilder));
-        Guard.NotNull(chars, nameof(chars));
+        if (stringBuilder is null) throw new ArgumentNullException();
 
         return stringBuilder.TrimEnd(new string(chars));
     }
@@ -139,7 +134,7 @@ public static class StringBuilderExtensions
     /// <returns></returns>
     public static StringBuilder TrimEnd(this StringBuilder stringBuilder, string str)
     {
-        Guard.NotNull(stringBuilder, nameof(stringBuilder));
+        if (stringBuilder is null) throw new ArgumentNullException();
         if (string.IsNullOrEmpty(str)
             || stringBuilder.Length == 0
             || str!.Length > stringBuilder.Length)
@@ -165,7 +160,7 @@ public static class StringBuilderExtensions
     /// <returns>返回修改后的StringBuilder，主要用于链式操作</returns>
     public static StringBuilder Trim(this StringBuilder stringBuilder)
     {
-        Guard.NotNull(stringBuilder, nameof(stringBuilder));
+        if (stringBuilder is null) throw new ArgumentNullException();
 
         if (stringBuilder.Length == 0)
         {
@@ -184,11 +179,11 @@ public static class StringBuilderExtensions
     /// <exception cref="IndexOutOfRangeException">超出字符串索引长度异常</exception>
     public static string SubString(this StringBuilder stringBuilder, int start, int length)
     {
-        Guard.NotNull(stringBuilder, nameof(stringBuilder));
+        if (stringBuilder is null) throw new ArgumentNullException();
 
         if (start + length > stringBuilder.Length)
         {
-            throw new BusinessException(code: "Bee.Abp:0003");
+            throw new ArgumentOutOfRangeException();
         }
 
         var cs = new char[length];
@@ -202,18 +197,21 @@ public static class StringBuilderExtensions
 
     public static StringBuilder AppendLineWithControlChar(this StringBuilder stringBuilder, StringBuilder sb, string newLine)
     {
+        if (stringBuilder is null) throw new ArgumentNullException();
         stringBuilder = AppendWithControlChar(stringBuilder, sb.ToString());
         return stringBuilder.Append(newLine);
     }
 
     public static StringBuilder AppendLineWithControlChar(this StringBuilder stringBuilder, string str, string newLine)
     {
+        if (stringBuilder is null) throw new ArgumentNullException();
         stringBuilder = AppendWithControlChar(stringBuilder, str);
         return stringBuilder.Append(newLine);
     }
 
     public static StringBuilder AppendWithControlChar(this StringBuilder stringBuilder, StringBuilder sb)
     {
+        if (stringBuilder is null) throw new ArgumentNullException();
         return AppendWithControlChar(stringBuilder, sb.ToString());
     }
 

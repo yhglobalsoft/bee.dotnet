@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics;
-using Bee;
+
 
 namespace System.Reflection;
 
@@ -13,13 +13,14 @@ public static class AssemblyExtensions
     /// </summary>
     public static string GetProductVersion(this Assembly assembly)
     {
-        Guard.NotNull(assembly, nameof(assembly));
+        if (assembly is null) throw new ArgumentNullException();
         var info = FileVersionInfo.GetVersionInfo(assembly.Location);
         var version = info.ProductVersion;
         if (version.Contains("+"))
         {
             version = version.ReplaceRegex(@"\+(\w+)?", "");
         }
+
         return version;
     }
 }

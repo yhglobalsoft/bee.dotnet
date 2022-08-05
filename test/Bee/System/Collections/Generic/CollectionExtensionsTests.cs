@@ -1,5 +1,5 @@
-﻿using Bee.Abp.Exceptions;
-using Shouldly;
+﻿using Shouldly;
+using Xunit;
 
 namespace System.Collections.Generic
 {
@@ -15,7 +15,7 @@ namespace System.Collections.Generic
             numbers.Count(m => m == 5).ShouldBe(1);
 
             numbers = null;
-            Should.Throw<BeeNullException>(() =>
+            Should.Throw<ArgumentNullException>(() =>
             {
                 numbers.AddIfNotExist(3);
             });
@@ -31,7 +31,7 @@ namespace System.Collections.Generic
             strings.Count.ShouldBe(4);
 
             strings = null;
-            Should.Throw<BeeNullException>(() =>
+            Should.Throw<ArgumentNullException>(() =>
             {
                 strings.AddIfNotNull("abc");
             });

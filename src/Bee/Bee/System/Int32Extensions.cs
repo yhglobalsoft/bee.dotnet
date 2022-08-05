@@ -1,5 +1,5 @@
 ﻿using System.Globalization;
-using Volo.Abp;
+
 
 namespace System;
 
@@ -18,7 +18,7 @@ public static class Int32Extensions
             out var result);
         if (!canParse)
         {
-            throw new BusinessException(code: "Bee.Abp:0007").WithData("value", value);
+            throw new Exception("not can parse");
         }
 
         return result;

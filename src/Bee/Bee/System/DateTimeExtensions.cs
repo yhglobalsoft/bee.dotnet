@@ -1,6 +1,4 @@
 ﻿using System.Globalization;
-using System.Linq;
-using Volo.Abp;
 
 namespace System;
 
@@ -80,7 +78,7 @@ public static class DateTimeExtensions
         var length = jsTime.ToString().Length;
         if (!(length == 10 || length == 13))
         {
-            throw new BusinessException(code: "Bee.Abp:0006");
+            throw new ArgumentOutOfRangeException();
         }
 
         var start = new DateTime(1970, 1, 1);

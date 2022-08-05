@@ -1,6 +1,4 @@
-﻿using OfficeOpenXml.FormulaParsing.Excel.Functions.Logical;
-
-namespace System;
+﻿namespace System;
 
 /// <summary>
 /// Decimal扩展操作类
