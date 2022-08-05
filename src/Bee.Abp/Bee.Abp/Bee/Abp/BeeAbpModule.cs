@@ -1,6 +1,4 @@
-﻿using Magicodes.ExporterAndImporter.Core;
-using Magicodes.ExporterAndImporter.Excel;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.Application;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.BlobStoring.Aliyun;
@@ -11,7 +9,6 @@ using Volo.Abp.Modularity;
 using Volo.Abp.ObjectMapping;
 using Volo.Abp.TextTemplating.Scriban;
 using Volo.Abp.VirtualFileSystem;
-using Bee.Abp;
 
 namespace Bee.Abp;
 
@@ -31,11 +28,6 @@ public class BeeAbpModule : AbpModule
         {
             options.UseHybridSerializer = false;
         });
-
-        context.Services.AddTransient<IExporter, ExcelExporter>(); 
-        context.Services.AddTransient<IImporter, ExcelImporter>();
-        context.Services.AddTransient<IExcelImporter, ExcelImporter>();
-        context.Services.AddTransient<IExcelExporter, ExcelExporter>();
     }
         
     public override void ConfigureServices(ServiceConfigurationContext context)

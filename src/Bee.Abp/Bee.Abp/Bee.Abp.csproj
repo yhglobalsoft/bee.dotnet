@@ -28,7 +28,6 @@
 
     <ItemGroup>
         <PackageReference Include="Humanizer.Core.zh-Hans" />
-        <PackageReference Include="Magicodes.IE.Excel" />
         <PackageReference Include="Polly" />
     </ItemGroup>
 
