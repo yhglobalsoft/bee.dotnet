@@ -8,9 +8,10 @@
 		<ImplicitUsings>true</ImplicitUsings>
 		<Authors>YHGlobal</Authors>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
-		<RepositoryUrl>http://git.pro.yhglobal.cn/bee/abp</RepositoryUrl>
+		<RepositoryUrl>https://github.com/yhglobalsoft/bee.dotnet</RepositoryUrl>
 		<PackageIconUrl>http://www.yhglobal.com/images/Bee.logo_128.png</PackageIconUrl>
 	</PropertyGroup>
+	
 	<ItemGroup>
 		
 		<!--微软官方包-->
