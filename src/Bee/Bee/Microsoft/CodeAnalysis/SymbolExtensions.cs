@@ -38,7 +38,7 @@ public static class SymbolExtensions
     {
         return symbol.ToDisplayString(SymbolDisplayFormat.MinimallyQualifiedFormat);
     }
-        
+
     public static IEnumerable<ITypeSymbol> GetBaseTypesAndThis(this ITypeSymbol symbol)
     {
         var current = symbol;

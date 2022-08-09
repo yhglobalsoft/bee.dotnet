@@ -39,6 +39,7 @@ public abstract class BeeDomainService : DomainService
             : (IObjectMapper)provider.GetRequiredService(typeof(IObjectMapper<>).MakeGenericType(ObjectMapperContext)));
 
     #region Localization
+    
     private IStringLocalizer _localizer;
 
     private Type _localizationResource = typeof(DefaultResource);

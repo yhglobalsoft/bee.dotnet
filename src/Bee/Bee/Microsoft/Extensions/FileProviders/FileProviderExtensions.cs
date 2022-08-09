@@ -5,7 +5,7 @@ public static class FileProviderExtensions
     public static IEnumerable<(string, IFileInfo)> GetFilesRecursively(this IFileProvider fileProvider, string subPath)
     {
         if (string.IsNullOrWhiteSpace(subPath)) throw new ArgumentException();
-        
+
         var contents = fileProvider.GetDirectoryContents(subPath);
         foreach (var content in contents)
         {

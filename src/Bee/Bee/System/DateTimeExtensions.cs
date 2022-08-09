@@ -149,6 +149,7 @@ public static class DateTimeExtensions
             return null;
         }
 
-        return new DateTime(dateTime.Value.Year, dateTime.Value.Month, dateTime.Value.Day, dateTime.Value.Hour, dateTime.Value.Minute, dateTime.Value.Second).AddSeconds(1);
+        return new DateTime(dateTime.Value.Year, dateTime.Value.Month, dateTime.Value.Day, dateTime.Value.Hour,
+            dateTime.Value.Minute, dateTime.Value.Second).AddSeconds(1);
     }
 }

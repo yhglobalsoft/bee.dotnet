@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace System.Reflection;
+﻿namespace System.Reflection;
 
 /// <summary>
 /// 方法<see cref="MethodInfo"/>的扩展辅助操作方法
@@ -13,8 +11,8 @@ public static class MethodInfoExtensions
     public static bool IsAsync(this MethodInfo method)
     {
         return (method.ReturnType == typeof(Task<>)
-                || method.ReturnType.IsGenericType 
-                && method.ReturnType.GetGenericTypeDefinition() == typeof(Task<>)) 
+                || method.ReturnType.IsGenericType
+                && method.ReturnType.GetGenericTypeDefinition() == typeof(Task<>))
                || method.ReturnType == typeof(Task);
     }
 

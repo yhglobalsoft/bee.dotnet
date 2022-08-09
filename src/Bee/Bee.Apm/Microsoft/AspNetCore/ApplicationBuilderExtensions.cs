@@ -8,11 +8,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StackExchange.Redis;
 
-
 namespace Microsoft.AspNetCore;
 
 public static class ApplicationBuilderExtensions
 {
+    /// <summary>
+    /// 开启 APM 监控
+    /// 目前已支持 Http EfCore SqlClient Elasticsearch
+    /// hangfire Cap 等实现中
+    /// </summary>
     public static void UseBeeApm(this IApplicationBuilder app, IConfiguration configuration = null)
     {
         Elastic.Apm.AspNetCore.ApmMiddlewareExtension.UseElasticApm(app, configuration,
@@ -32,4 +36,5 @@ public static class ApplicationBuilderExtensions
         var muxer = app.ApplicationServices.GetService<IConnectionMultiplexer>();
         muxer.UseElasticApm();
     }
+    
 }

@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace System.Reflection;
+﻿namespace System.Reflection;
 
 /// <summary>
 /// 属性<see cref="MethodInfo"/>的扩展辅助操作方法

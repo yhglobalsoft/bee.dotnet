@@ -31,6 +31,7 @@ public static class StringBuilderExtensions
         {
             return stringBuilder;
         }
+
         while (c.Equals(stringBuilder[0]))
         {
             stringBuilder.Remove(0, 1);
@@ -48,7 +49,7 @@ public static class StringBuilderExtensions
     public static StringBuilder TrimStart(this StringBuilder stringBuilder, char[] chars)
     {
         if (stringBuilder is null) throw new ArgumentNullException();
-  
+
         return stringBuilder.TrimStart(new string(chars));
     }
 
@@ -141,6 +142,7 @@ public static class StringBuilderExtensions
         {
             return stringBuilder;
         }
+
         while (stringBuilder.SubString(stringBuilder.Length - str.Length, str.Length).Equals(str))
         {
             stringBuilder.Remove(stringBuilder.Length - str.Length, str.Length);
@@ -166,6 +168,7 @@ public static class StringBuilderExtensions
         {
             return stringBuilder;
         }
+
         return stringBuilder.TrimEnd().TrimStart();
     }
 
@@ -238,5 +241,4 @@ public static class StringBuilderExtensions
 
         return stringBuilder;
     }
-
 }
