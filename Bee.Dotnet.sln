@@ -8,6 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.solution_items", "0.solut
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.targets = Directory.Build.targets
 		Directory.Build.Volo.targets = Directory.Build.Volo.targets
+		Volo.Abp.Version.props = Volo.Abp.Version.props
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bee.Abp.Localozation", "src\Bee.Abp\Bee.Abp.Localozation\Bee.Abp.Localozation.csproj", "{680F70AA-6899-41E6-A069-F2173E605E10}"
