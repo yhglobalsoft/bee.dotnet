@@ -1,0 +1,83 @@
+# Project information
+site_name: 越海.NetCore
+site_url: https://github.com/yhglobalsoft
+site_description: 越海.NetCore
+site_author: 越海
+
+repo_name: "GitHub"
+repo_url: "https://github.com/yhglobalsoft/bee.dotnet"
+edit_uri: "edit/master/docs/content"
+docs_dir: "content"
+
+# Copyright
+copyright: Copyright &copy; 2022 <a href="https://github.com/yhglobalsoft/bee.dotnet"></a>.
+
+#theme: material
+theme:
+  name: "material"
+  palette:
+    primary: "deep purple"
+    accent: "indigo"
+  language: en
+  include_sidebar: true
+  logo: "img/logo.svg"
+  favicon: "img/favicon.ico"
+  features:
+    - navigation.tabs
+    - navigation.instant
+  i18n:
+    prev: "Previous"
+    next: "Next"
+
+#Customization
+extra:
+  social:
+    - icon: "fontawesome/brands/github"
+      link: "https://github.com/yhglobalsoft/bee.dotnet"
+
+
+# Extensions
+markdown_extensions:
+  - markdown.extensions.admonition
+  - markdown.extensions.codehilite:
+      guess_lang: true
+      linenums: false
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - markdown.extensions.toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: dotnetcore
+      repo: cap
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+nav:
+  - Home: index.md
+  - 文档（中文）:
+      - 入门:
+          - 快速开始: user-guide/zh/getting-started/quick-start.md
+          - 介绍: user-guide/zh/getting-started/introduction.md
+          - 贡献: user-guide/zh/getting-started/contributing.md
+  - Release:   
+      - 发行说明: user-guide/zh/release/note.md
+  - 关于:
+      - Contact Us: user-guide/zh/about/contact-us.md
+      - License: user-guide/zh/release/license.md      
+
