@@ -13,4 +13,5 @@ jobs:
         persist-credentials: false 
     - name: Deploy docs 🚀
       uses: mhausenblas/mkdocs-deploy-gh-pages@master
+      env:
         CONFIG_FILE: docs/mkdocs.yml
