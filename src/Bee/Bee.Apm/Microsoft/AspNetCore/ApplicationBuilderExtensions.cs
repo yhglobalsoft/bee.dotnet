@@ -32,6 +32,7 @@ public static class ApplicationBuilderBasicApmExtensions
 }
 
 
+
 public static class ApplicationBuilderRedisApmExtensions
 {
     /// <summary>
