@@ -18,3 +18,4 @@ public class BeeAbpApmModule : AbpModule
         app.UseBeeBasicApm(context.GetConfiguration());
     }
 }
+
