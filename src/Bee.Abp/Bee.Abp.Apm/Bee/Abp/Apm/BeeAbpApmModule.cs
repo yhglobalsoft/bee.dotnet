@@ -4,7 +4,7 @@ using Volo.Abp.AspNetCore;
 using Volo.Abp.Caching.StackExchangeRedis;
 using Volo.Abp.Modularity;
 
-namespace Bee.Abp.Apm.Bee.Abp.Apm;
+namespace Bee.Abp.Apm;
 
 
 [DependsOn(typeof(BeeAbpModule))]
@@ -15,6 +15,6 @@ public class BeeAbpApmModule : AbpModule
     public override void OnApplicationInitialization(ApplicationInitializationContext context)
     {
         var app = context.GetApplicationBuilder();
-        app.UseBeeApm(context.GetConfiguration());
+        app.UseBeeBasicApm(context.GetConfiguration());
     }
 }

@@ -1,4 +1,4 @@
-﻿using Bee.Abp.Apm.Bee.Abp.Apm;
+﻿using Bee.Abp.Apm;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.OpenApi.Models;
 using Bee.Abp.AspNetCore.ApmAll.SampleB.Data;
