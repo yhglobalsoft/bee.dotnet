@@ -24,7 +24,7 @@
 		<PackageReference Update="Microsoft.CodeAnalysis.Analyzers" Version="3.3.3" />
 		<PackageReference Update="Microsoft.CodeAnalysis.CSharp" Version="4.0.0-6.final" />
 		<PackageReference Update="Microsoft.NET.Test.Sdk" Version="16.11.0" />
-
+		<PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
 		<PackageReference Update="Microsoft.EntityFrameworkCore.Tools" Version="6.0.7" />
 		<PackageReference Update="Microsoft.AspNetCore.DataProtection.StackExchangeRedis" Version="6.0.7" />
 		<PackageReference Update="Microsoft.EntityFrameworkCore.Proxies" Version="6.0.7" />
@@ -71,5 +71,8 @@
 		<PackageReference Update="Elastic.Apm.SqlClient" Version="1.16.1"/>
 		<PackageReference Update="Elastic.Apm.StackExchange.Redis" Version="1.16.1"/>
 
+		<!-- Hangfire -->
+		<PackageReference Update="Hangfire.Core" Version="1.7.30" />
+		<PackageReference Update="System.Diagnostics.DiagnosticSource" Version="6.0.0" />
 	</ItemGroup>
 </Project>

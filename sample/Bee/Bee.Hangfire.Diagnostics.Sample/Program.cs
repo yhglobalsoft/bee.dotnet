@@ -1,3 +1,7 @@
+using System.Diagnostics;
+using Bee.Apm.Hangfire;
+using Bee.Hangfire.Diagnostics;
+using Bee.Hangfire.Filter;
 using Hangfire;
 using Hangfire.Redis;
 using Microsoft.AspNetCore;
@@ -11,20 +15,29 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-var redisConnection = builder.Configuration.GetConnectionString("Redis");
-builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(redisConnection));
 
+var redis = ConnectionMultiplexer.Connect(builder.Configuration.GetConnectionString("Hangfire"));
+builder.Services.AddSingleton<IConnectionMultiplexer>(redis);
+builder.Services.AddHangfireServer();
+builder.Services.AddBeeApmHangfire();
 builder.Services.AddHangfire(
     config =>
     {
         config.UseRedisStorage(ConnectionMultiplexer.Connect(builder.Configuration.GetConnectionString("Hangfire")), new RedisStorageOptions()
         {
-            Db = 11,
+            Db = 13,
         });
+
+        //config.UseFilter(new BeeHangfireDiagnosticClientFilter(provider));
+        config.UseFilter(new BeeHangfireDiagnosticServerFilter());
     });
-builder.Services.AddHangfireServer();
+
+
 
 var app = builder.Build();
+app.UseBeeBasicApm();
+app.UseBeeRedisApm();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -32,7 +45,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.UseBeeBasicApm();
 
 app.UseAuthorization();
 

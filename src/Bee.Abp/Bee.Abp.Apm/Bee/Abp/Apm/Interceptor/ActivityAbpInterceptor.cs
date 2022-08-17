@@ -12,6 +12,7 @@ public class ActivityAbpInterceptor : AbpInterceptor, ITransientDependency
         if (ShouldIntercept(invocation.Method))
         {
             var transaction = Elastic.Apm.Agent.Tracer.CurrentTransaction;
+           
             ISpan span = null;
             if (transaction != null)
             {

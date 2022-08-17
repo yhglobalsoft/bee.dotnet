@@ -8,14 +8,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="StackExchange.Redis" Version="2.6.48" />
+      
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-        <PackageReference Include="Hangfire.AspNetCore" Version="1.7.30" />
         <PackageReference Include="Hangfire.Redis.StackExchange" Version="1.8.5" />
+        <PackageReference Include="Hangfire.AspNetCore" Version="1.7.30" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\src\Bee\Bee.Apm\Bee.Apm.csproj" />
+      <ProjectReference Include="..\..\..\src\Bee\Bee.Apm.Hangfire\Bee.Apm.Hangfire.csproj" />
+      <ProjectReference Include="..\..\..\src\Bee\Bee.Hangfire.Diagnostics\Bee.Hangfire.Diagnostics.csproj" />
     </ItemGroup>
 
 </Project>

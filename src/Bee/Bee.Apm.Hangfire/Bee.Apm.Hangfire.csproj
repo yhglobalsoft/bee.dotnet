@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <AssemblyName>Bee.Apm.Hangfire</AssemblyName>
+        <RootNamespace />
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Bee.Apm\Bee.Apm.csproj" />
+        <ProjectReference Include="..\Bee.Hangfire.Diagnostics\Bee.Hangfire.Diagnostics.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Elastic.Apm" />
+    </ItemGroup>
+
+</Project>

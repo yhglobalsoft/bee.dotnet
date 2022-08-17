@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using Bee.Abp.AspNetCore.ApmAll.SampleA.Entities;
 using Bee.Abp.AspNetCore.ApmAll.SampleA.Services.Dtos;
+using Hangfire;
 using Microsoft.Extensions.Caching.Distributed;
 using StackExchange.Redis;
 using Volo.Abp.Application.Dtos;
@@ -8,6 +9,7 @@ using Volo.Abp.Application.Services;
 using Volo.Abp.Caching;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Json;
+using Volo.Abp.Threading;
 using Volo.Abp.Uow;
 
 namespace Bee.Abp.AspNetCore.ApmAll.SampleA.Services;
@@ -27,14 +29,14 @@ public class BookAppService :
     private readonly HttpClient _httpClient;
     private readonly IUnitOfWorkManager _unitOfWorkManager;
     private readonly IConnectionMultiplexer _connection;
-    
+
     public BookAppService(
         IRepository<Book, Guid> repository,
-        ILogger<BookAppService> logger, 
-        IHttpClientFactory httpClientFactory, 
-        IJsonSerializer jsonSerializer, 
-        IUnitOfWorkManager unitOfWorkManager, 
-        IDistributedCache<string> cache, 
+        ILogger<BookAppService> logger,
+        IHttpClientFactory httpClientFactory,
+        IJsonSerializer jsonSerializer,
+        IUnitOfWorkManager unitOfWorkManager,
+        IDistributedCache<string> cache,
         IConnectionMultiplexer connection)
         : base(repository)
     {
@@ -48,7 +50,6 @@ public class BookAppService :
 
     public override async Task<BookDto> CreateAsync(CreateUpdateBookDto input)
     {
-
         await GetCacheAsync();
 
         // _logger.LogInformation($"开始创建书籍,请求参数：{input.ToJsonString()}");
@@ -58,6 +59,7 @@ public class BookAppService :
         // {
         //     span = transaction.StartSpan("CreateAsync", "Service", "ApplicationService");
         // }
+        
 
         var dto = await base.CreateAsync(input);
         // span?.End();
@@ -71,17 +73,16 @@ public class BookAppService :
 
     private async Task<AuthorDto> RequestSampleBAsync(string authorName)
     {
-        
         var createAuthorDto = new CreateAuthorDto
         {
             Name = authorName,
             BirthDate = DateTime.Now,
             ShortBio = authorName
         };
-        
+
         var authorJson = _jsonSerializer.Serialize(createAuthorDto);
         var requestContent = new StringContent(authorJson, Encoding.UTF8, "application/json");
-        
+
         var response = await _httpClient.PostAsync("/api/app/author", requestContent);
         response.EnsureSuccessStatusCode();
         var content = await response.Content.ReadAsStringAsync();
@@ -95,5 +96,4 @@ public class BookAppService :
         await database.StringSetAsync($"string1", 1);
         await database.StringGetAsync($"string1");
     }
-    
 }

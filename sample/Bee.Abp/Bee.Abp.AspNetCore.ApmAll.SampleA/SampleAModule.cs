@@ -5,6 +5,9 @@ using Bee.Abp.AspNetCore.ApmAll.SampleA.Data;
 using Bee.Abp.AspNetCore.ApmAll.SampleA.Localization;
 using Bee.Abp.AspNetCore.ApmAll.SampleA.Menus;
 using Elastic.Apm.StackExchange.Redis;
+using Hangfire;
+using Hangfire.Redis;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.Caching.Distributed;
 using StackExchange.Redis;
@@ -148,6 +151,19 @@ public class SampleAModule : AbpModule
         ConfigureAuthentication(context.Services, configuration);
         ConfigureEfCore(context);
         ConfigureCache(context);
+        
+        
+        context.Services.AddHangfire(
+            config =>
+            {
+                config.UseRedisStorage(ConnectionMultiplexer.Connect(context.Services.GetConfiguration().GetConnectionString("Hangfire")), 
+                    new RedisStorageOptions()
+                {
+                    Db = 14,
+                });
+                //config.UseFilter(new BeeHangfireDiagnosticApplyStateFilter());
+            });
+        context.Services.AddHangfireServer();
     }
 
     private void ConfigureMultiTenancy()
@@ -354,7 +370,7 @@ public class SampleAModule : AbpModule
         {
             app.UseMultiTenancy();
         }
-
+        
         app.UseUnitOfWork();
         app.UseIdentityServer();
         app.UseAuthorization();
