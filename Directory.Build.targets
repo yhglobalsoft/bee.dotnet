@@ -72,7 +72,9 @@
 		<PackageReference Update="Elastic.Apm.StackExchange.Redis" Version="1.16.1"/>
 
 		<!-- Hangfire -->
-		<PackageReference Update="Hangfire.Core" Version="1.7.30" />
+		<PackageReference Update="Hangfire.Core" Version="1.7.29" />
 		<PackageReference Update="System.Diagnostics.DiagnosticSource" Version="6.0.0" />
+		<PackageReference Update="Hangfire.Redis.StackExchange" Version="1.8.5" />
+		<PackageReference Update="Hangfire.AspNetCore" Version="1.7.29" />
 	</ItemGroup>
 </Project>

@@ -1,6 +1,5 @@
 using System.Diagnostics;
 using Bee.Apm.Hangfire;
-using Bee.Hangfire.Diagnostics;
 using Bee.Hangfire.Filter;
 using Hangfire;
 

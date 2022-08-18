@@ -57,6 +57,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bee.Hangfire.Diagnostics.Sa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bee.Apm.Hangfire", "src\Bee\Bee.Apm.Hangfire\Bee.Apm.Hangfire.csproj", "{8834D9D5-D717-4C5E-B302-0D478935FCB1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bee.Abp.Apm.Hangfire", "src\Bee.Abp\Bee.Abp.Apm.Hangfire\Bee.Abp.Apm.Hangfire.csproj", "{09F7FB9F-BF1C-4FC7-BB84-F18C260DBFAD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +87,7 @@ Global
 		{15E093E4-60F6-41ED-A466-FE6CDCB38B29} = {1163EBEE-0233-43DC-962D-DE4C3D9B8063}
 		{0D58EE3A-44D3-4FC6-858A-8D1F0641ED76} = {15E093E4-60F6-41ED-A466-FE6CDCB38B29}
 		{8834D9D5-D717-4C5E-B302-0D478935FCB1} = {CF503882-992F-4FC1-8B22-0ED6ED48D4DD}
+		{09F7FB9F-BF1C-4FC7-BB84-F18C260DBFAD} = {B4AB3CDB-B818-4C3D-85B5-A8A29FE1282D}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{680F70AA-6899-41E6-A069-F2173E605E10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -143,5 +146,9 @@ Global
 		{8834D9D5-D717-4C5E-B302-0D478935FCB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8834D9D5-D717-4C5E-B302-0D478935FCB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8834D9D5-D717-4C5E-B302-0D478935FCB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09F7FB9F-BF1C-4FC7-BB84-F18C260DBFAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09F7FB9F-BF1C-4FC7-BB84-F18C260DBFAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09F7FB9F-BF1C-4FC7-BB84-F18C260DBFAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09F7FB9F-BF1C-4FC7-BB84-F18C260DBFAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

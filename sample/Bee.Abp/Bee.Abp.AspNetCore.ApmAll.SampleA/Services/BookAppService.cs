@@ -59,8 +59,8 @@ public class BookAppService :
         // {
         //     span = transaction.StartSpan("CreateAsync", "Service", "ApplicationService");
         // }
-
-
+        
+        BackgroundJob.Enqueue(() => Console.WriteLine("ok"));
         var dto = await base.CreateAsync(input);
         // span?.End();
         // _unitOfWorkManager.Current.OnCompleted(async () =>
@@ -90,7 +90,7 @@ public class BookAppService :
         return createdAuthor;
     }
 
-    private async Task GetCacheAsync()
+    public async Task GetCacheAsync()
     {
         var database = _connection.GetDatabase();
         await database.StringSetAsync($"string1", 1);

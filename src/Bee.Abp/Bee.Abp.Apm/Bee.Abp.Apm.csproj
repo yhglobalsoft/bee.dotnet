@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
         <NoWarn>$(NoWarn);CS1591;NU1603</NoWarn>
-        <AssemblyName>Bee.Abp.Apm</AssemblyName>
+        <AssemblyName>YHGlobal.Bee.Abp.Apm</AssemblyName>
         <RootNamespace />
     </PropertyGroup>
 

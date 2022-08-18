@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
         <NoWarn>$(NoWarn);CS1591;NU1603</NoWarn>
-        <AssemblyName>Bee.Abp.Localization</AssemblyName>
+        <AssemblyName>YHGlobal.Bee.Abp.Localization</AssemblyName>
         <RootNamespace />
     </PropertyGroup>
 

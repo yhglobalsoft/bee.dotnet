@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <AssemblyName>YHGlobal.Bee.Abp.Apm.Hangfire</AssemblyName>
+        <RootNamespace />
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Bee\Bee.Apm.Hangfire\Bee.Apm.Hangfire.csproj" />
+      <ProjectReference Include="..\Bee.Abp\Bee.Abp.csproj" />
+    </ItemGroup>
+
+</Project>

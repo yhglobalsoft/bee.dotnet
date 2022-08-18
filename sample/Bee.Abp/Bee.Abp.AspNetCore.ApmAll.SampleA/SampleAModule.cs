@@ -1,4 +1,5 @@
 ﻿using Bee.Abp.Apm;
+using Bee.Abp.Apm.Hangfire;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.OpenApi.Models;
 using Bee.Abp.AspNetCore.ApmAll.SampleA.Data;
@@ -25,6 +26,8 @@ using Volo.Abp.AspNetCore.Serilog;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.Autofac;
 using Volo.Abp.AutoMapper;
+using Volo.Abp.BackgroundJobs;
+using Volo.Abp.BackgroundJobs.Hangfire;
 using Volo.Abp.Caching;
 using Volo.Abp.Caching.StackExchangeRedis;
 using Volo.Abp.Emailing;
@@ -110,9 +113,11 @@ namespace Bee.Abp.AspNetCore.ApmAll.SampleA;
     typeof(AbpSettingManagementEntityFrameworkCoreModule),
     typeof(AbpSettingManagementHttpApiModule),
     typeof(AbpSettingManagementWebModule),
-    
+    typeof(AbpBackgroundJobsHangfireModule),
     // APM 
-    typeof(BeeAbpApmModule)
+    typeof(BeeAbpApmModule),
+    // APM Hangfire
+    typeof(BeeAbpApmHangfireModule)
 )]
 public class SampleAModule : AbpModule
 {
@@ -152,7 +157,7 @@ public class SampleAModule : AbpModule
         ConfigureEfCore(context);
         ConfigureCache(context);
         
-        
+        Configure<AbpBackgroundJobOptions>(options => { options.IsJobExecutionEnabled = true; });
         context.Services.AddHangfire(
             config =>
             {
@@ -161,7 +166,6 @@ public class SampleAModule : AbpModule
                 {
                     Db = 14,
                 });
-                //config.UseFilter(new BeeHangfireDiagnosticApplyStateFilter());
             });
         context.Services.AddHangfireServer();
     }
@@ -374,7 +378,7 @@ public class SampleAModule : AbpModule
         app.UseUnitOfWork();
         app.UseIdentityServer();
         app.UseAuthorization();
-
+        app.UseHangfireDashboard();
         app.UseSwagger();
         app.UseAbpSwaggerUI(options =>
         {

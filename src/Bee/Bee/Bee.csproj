@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
         <NoWarn>$(NoWarn);CS1591;NU1603</NoWarn>
-        <AssemblyName>Bee</AssemblyName>
+        <AssemblyName>YHGlobal.Bee</AssemblyName>
         <RootNamespace />
     </PropertyGroup>
 

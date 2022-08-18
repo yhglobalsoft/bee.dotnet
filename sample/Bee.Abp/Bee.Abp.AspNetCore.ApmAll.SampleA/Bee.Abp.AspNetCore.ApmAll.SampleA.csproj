@@ -12,9 +12,9 @@
     <PackageReference Include="Serilog.Sinks.Async" />
     <PackageReference Include="Serilog.Sinks.Elasticsearch" />
     <PackageReference Include="Elastic.CommonSchema.Serilog" />
-    
-    <PackageReference Include="Hangfire.Redis.StackExchange" Version="1.8.5" />
-    <PackageReference Include="Hangfire.AspNetCore" Version="1.7.30" />
+    <PackageReference Include="Hangfire.Redis.StackExchange" />
+    <PackageReference Include="Hangfire.AspNetCore" />
+    <PackageReference Include="Volo.Abp.BackgroundJobs.HangFire" />
   </ItemGroup>
 
   <ItemGroup>
@@ -113,6 +113,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Bee.Abp\Bee.Abp.Apm.Hangfire\Bee.Abp.Apm.Hangfire.csproj" />
     <ProjectReference Include="..\..\..\src\Bee.Abp\Bee.Abp.Apm\Bee.Abp.Apm.csproj" />
   </ItemGroup>
 

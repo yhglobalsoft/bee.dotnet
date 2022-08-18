@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
         <NoWarn>$(NoWarn);CS1591;NU1603</NoWarn>
-        <AssemblyName>Bee.Abp</AssemblyName>
+        <AssemblyName>YHGlobal.Bee.Abp</AssemblyName>
         <RootNamespace />
     </PropertyGroup>
 
@@ -16,8 +16,6 @@
 
     <ItemGroup>
         <PackageReference Include="Volo.Abp.AutoMapper" />
-        <PackageReference Include="Volo.Abp.BackgroundJobs" />
-        <PackageReference Include="Volo.Abp.BackgroundJobs.HangFire" />
         <PackageReference Include="Volo.Abp.BlobStoring.Aliyun" />
         <PackageReference Include="Volo.Abp.Caching" />
         <PackageReference Include="Volo.Abp.Ddd.Domain" />
@@ -29,6 +27,7 @@
     <ItemGroup>
         <PackageReference Include="Humanizer.Core.zh-Hans" />
         <PackageReference Include="Polly" />
+        <PackageReference Include="Hangfire.Core" />
     </ItemGroup>
 
     <ItemGroup>
