@@ -1,8 +1,4 @@
-﻿using Bee.Abp.Exceptions.Domains;
-using Shouldly;
-using Volo.Abp.Localization;
-
-namespace Bee.Abp;
+﻿namespace Bee.Abp;
 
 public class BeeAbpExceptionLocalizationTests : BeeAbpTestBase
 {

@@ -1,7 +1,4 @@
-﻿using Xunit;
-using Shouldly;
-
-namespace System;
+﻿namespace System;
 
 public class DecimalExtensionsTest
 {

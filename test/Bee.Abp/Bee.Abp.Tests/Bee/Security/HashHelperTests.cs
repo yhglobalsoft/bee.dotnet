@@ -1,6 +1,4 @@
-﻿using Shouldly;
-
-namespace Bee.Security;
+﻿namespace Bee.Security;
 
 public class HashHelperTests
 {

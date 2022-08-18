@@ -1,8 +1,4 @@
-﻿using Volo.Abp;
-using Volo.Abp.Autofac;
-using Volo.Abp.Modularity;
-
-namespace Bee.Abp;
+﻿namespace Bee.Abp;
 
 [DependsOn(typeof(BeeAbpModule))]
 [DependsOn(typeof(BeeAbpLocalizationModule))]

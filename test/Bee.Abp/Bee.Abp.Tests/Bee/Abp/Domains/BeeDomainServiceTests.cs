@@ -1,7 +1,4 @@
-﻿using Shouldly;
-using Volo.Abp.Localization;
-
-namespace Bee.Abp.Domains;
+﻿namespace Bee.Abp.Domains;
 
 public class BeeDomainServiceTests : BeeAbpTestBase
 {

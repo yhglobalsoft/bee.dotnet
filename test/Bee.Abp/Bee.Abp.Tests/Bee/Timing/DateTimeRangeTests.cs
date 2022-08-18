@@ -1,6 +1,4 @@
-﻿using Shouldly;
-
-namespace Bee.Timing;
+﻿namespace Bee.Timing;
 
 public class DateTimeRangeTests
 {

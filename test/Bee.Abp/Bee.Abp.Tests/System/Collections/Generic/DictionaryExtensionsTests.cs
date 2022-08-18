@@ -1,6 +1,4 @@
-﻿using Shouldly;
-
-namespace System.Collections.Generic;
+﻿namespace System.Collections.Generic;
 
 public class DictionaryExtensionsTests
 {

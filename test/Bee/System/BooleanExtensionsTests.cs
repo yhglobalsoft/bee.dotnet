@@ -1,26 +1,22 @@
-using Shouldly;
-using Xunit;
+namespace System;
 
-namespace System
+public class BooleanExtensionsTests
 {
-    public class BooleanExtensionsTests
+    [Fact]
+    public void ToLowerTest()
     {
-        [Fact]
-        public void ToLowerTest()
-        {
-            true.ToLower().ShouldBe("true");
-            false.ToLower().ShouldBe("false");
-        }
+        true.ToLower().ShouldBe("true");
+        false.ToLower().ShouldBe("false");
+    }
 
-        [Fact]
-        public void TrueThrowTest()
+    [Fact]
+    public void TrueThrowTest()
+    {
+        Should.Throw<Exception>(() =>
         {
-            Should.Throw<Exception>(() =>
-            {
-                true.TrueThrow(new Exception());
-            });
+            true.TrueThrow(new Exception());
+        });
 
-            false.TrueThrow(new Exception());
-        }
+        false.TrueThrow(new Exception());
     }
 }

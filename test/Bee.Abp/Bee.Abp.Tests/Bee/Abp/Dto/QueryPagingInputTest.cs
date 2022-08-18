@@ -1,6 +1,4 @@
-﻿using Shouldly;
-
-namespace Bee.Abp.Dto;
+﻿namespace Bee.Abp.Dto;
 
 public class QueryPagingInputTest
 {

@@ -59,7 +59,7 @@ public class BookAppService :
         // {
         //     span = transaction.StartSpan("CreateAsync", "Service", "ApplicationService");
         // }
-        
+
 
         var dto = await base.CreateAsync(input);
         // span?.End();
