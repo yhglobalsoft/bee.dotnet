@@ -12,7 +12,7 @@
 		<PackageIcon>icon.png</PackageIcon>
 	</PropertyGroup>
 	<ItemGroup>
-		<None Include="$(MSBuildThisFileDirectory)icon.png" Pack="true"/>
+		<None Include="$(MSBuildThisFileDirectory)icon.png" Pack="true" PackagePath=""/>
 	</ItemGroup>
 	
 	
