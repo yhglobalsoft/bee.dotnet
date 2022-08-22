@@ -1,5 +1,3 @@
-using Bee.Hangfire.Diagnostics;
-
 namespace Microsoft.Extensions.DependencyInjection;
 
 public static class BeeHangfireServiceCollectionExtensions

@@ -1,7 +1,4 @@
-﻿using System.Diagnostics;
-using Bee.Hangfire.Diagnostics;
-
-namespace Bee.Apm.Hangfire
+﻿namespace Bee.Apm.Hangfire
 {
     public class BeeHangfireDiagnosticSourceSubscriber : IDisposable, IObserver<System.Diagnostics.DiagnosticListener>
     {

@@ -1,5 +1,3 @@
-using Bee.Hangfire.Diagnostics;
-using Elastic.Apm;
 using Elastic.Apm.Api;
 
 namespace Bee.Apm.Hangfire;

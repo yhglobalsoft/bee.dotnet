@@ -1,8 +1,3 @@
-using System.Diagnostics;
-using Bee.Apm.Hangfire;
-using Bee.Hangfire.Filter;
-using Hangfire;
-
 namespace Microsoft.Extensions.DependencyInjection;
 
 public static class BeeApmHangfireServiceCollectionExtensions

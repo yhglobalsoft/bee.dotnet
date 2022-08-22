@@ -1,6 +1,3 @@
-using Bee.Hangfire.Diagnostics;
-using Elastic.Apm;
-
 namespace Bee.Apm.Hangfire;
 
 public class ApmProviderDistributedTraceId : IProviderDistributedTraceId
@@ -18,6 +15,7 @@ public class ApmProviderDistributedTraceId : IProviderDistributedTraceId
             transaction = Agent.Tracer.StartTransaction(transactionName+".All.Transaction", BeeApmHangfireDiagnosticConsts.TransactionType);
         }
 
+        if (transaction?.Id == null) return null;
         return new KeyValuePair<string, string>(transaction.TraceId, transaction.Id);
     }
 }

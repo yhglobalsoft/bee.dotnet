@@ -1,8 +1,3 @@
-using System.Diagnostics;
-using Bee.Hangfire.Diagnostics;
-using Hangfire.Server;
-using Newtonsoft.Json;
-
 namespace Bee.Hangfire.Filter;
 
 public class BeeHangfireDiagnosticServerFilter : IServerFilter
