@@ -1,0 +1,25 @@
+name: deploy-nuget
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  Push-DockerHub:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Dotnet 6.x
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "6.0"
+          include-prerelease: True
+      - name: Setting Version
+        id: vars
+        run: echo ::set-output name=tag::${GITHUB_REF:10}
+      - name: Build
+        run: dotnet build Bee.Dotnet.sln
+      - name: Pack
+        run: dotnet pack Bee.Dotnet.sln  --include-source --include-symbols /p:Configuration=Release -p:PackageVersion=${GITHUB_REF:10} --output nupkgs
+      - name: Push
+        run: dotnet nuget push nupkgs/*.symbols.nupkg -k ${{secrets.NUGET_KEY}} -s https://api.nuget.org/v3/index.json
