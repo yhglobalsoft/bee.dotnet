@@ -4,6 +4,7 @@
         <TargetFramework>netstandard2.1</TargetFramework>
         <NoWarn>$(NoWarn);CS1591;NU1603</NoWarn>
         <AssemblyName>YHGlobal.Bee</AssemblyName>
+        <Description>dotnet基础帮助类</Description>
         <RootNamespace />
     </PropertyGroup>
 

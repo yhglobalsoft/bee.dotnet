@@ -4,6 +4,7 @@
         <TargetFramework>netstandard2.1</TargetFramework>
         <NoWarn>$(NoWarn);CS1591;NU1603</NoWarn>
         <AssemblyName>YHGlobal.Bee.Apm</AssemblyName>
+        <Description>Elastic.Apm基础实现</Description>
         <RootNamespace />
     </PropertyGroup>
 

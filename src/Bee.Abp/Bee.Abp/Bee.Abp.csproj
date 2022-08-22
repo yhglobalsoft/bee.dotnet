@@ -5,6 +5,7 @@
         <NoWarn>$(NoWarn);CS1591;NU1603</NoWarn>
         <AssemblyName>YHGlobal.Bee.Abp</AssemblyName>
         <RootNamespace />
+        <Description>Abp基础帮助类</Description>
     </PropertyGroup>
 
     <ItemGroup>

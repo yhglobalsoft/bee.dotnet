@@ -5,6 +5,7 @@
         <NoWarn>$(NoWarn);CS1591;NU1603</NoWarn>
         <AssemblyName>YHGlobal.Bee.Abp.Localization</AssemblyName>
         <RootNamespace />
+        <Description>Abp本地化</Description>
     </PropertyGroup>
 
     <ItemGroup>

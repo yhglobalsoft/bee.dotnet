@@ -9,9 +9,13 @@
 		<Authors>YHGlobal</Authors>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<RepositoryUrl>https://github.com/yhglobalsoft/bee.dotnet</RepositoryUrl>
-		<PackageIconUrl>http://www.yhglobal.com/images/Bee.logo_128.png</PackageIconUrl>
+		<PackageIcon>icon.png</PackageIcon>
 	</PropertyGroup>
-
+	<ItemGroup>
+		<None Include="$(MSBuildThisFileDirectory)icon.png" Pack="true"/>
+	</ItemGroup>
+	
+	
 	<ItemGroup>
 		
 		<!--微软官方包-->

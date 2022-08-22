@@ -3,6 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
         <AssemblyName>YHGlobal.Bee.Hangfire.Diagnostics</AssemblyName>
+        <Description>Hangfire实现诊断日志</Description>
         <RootNamespace />
     </PropertyGroup>
 

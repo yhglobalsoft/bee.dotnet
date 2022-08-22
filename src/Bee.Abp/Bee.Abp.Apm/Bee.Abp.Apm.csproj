@@ -5,6 +5,7 @@
         <NoWarn>$(NoWarn);CS1591;NU1603</NoWarn>
         <AssemblyName>YHGlobal.Bee.Abp.Apm</AssemblyName>
         <RootNamespace />
+        <Description>Abp集成Elastic.Apm</Description>
     </PropertyGroup>
 
     <ItemGroup>

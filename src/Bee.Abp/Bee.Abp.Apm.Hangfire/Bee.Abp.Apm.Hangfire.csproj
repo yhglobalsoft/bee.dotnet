@@ -5,6 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <AssemblyName>YHGlobal.Bee.Abp.Apm.Hangfire</AssemblyName>
         <RootNamespace />
+        <Description>Abp Hangfire集成Elastic.Apm</Description>
     </PropertyGroup>
 
     <ItemGroup>
